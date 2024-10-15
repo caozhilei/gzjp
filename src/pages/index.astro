@@ -1,0 +1,55 @@
+---
+import Layout from '../layouts/Layout.astro';
+
+const topics = [
+  { title: "交易者的核心能力培养", slug: "core-skills" },
+  { title: "交易者的经济知识普及", slug: "economic-knowledge" },
+  { title: "交易者的情绪管理提升", slug: "emotional-management" },
+  { title: "交易者的个人行为修炼", slug: "personal-behavior" },
+  { title: "交易者的交易技巧训练", slug: "trading-skills" }
+];
+---
+
+<Layout title="交易者的成长路径">
+  <main>
+    <h1>交易者的成长路径</h1>
+    <ul>
+      {topics.map((topic) => (
+        <li>
+          <a href={`/blog/${topic.slug}`}>{topic.title}</a>
+        </li>
+      ))}
+    </ul>
+  </main>
+</Layout>
+
+<style>
+  main {
+    margin: auto;
+    padding: 1rem;
+    max-width: 800px;
+    font-family: Arial, sans-serif;
+  }
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #333;
+  }
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    margin-bottom: 1rem;
+  }
+  a {
+    color: #3273dc;
+    text-decoration: none;
+    font-size: 1.1rem;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+</style>
