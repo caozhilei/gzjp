@@ -2,7 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   workflow_dispatch:
 
 jobs:
@@ -12,19 +12,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3
 
-      - name: Install Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: 16
-
-      - name: Install dependencies
-        run: npm ci
-
-      - name: Build
-        run: npm run build
+      - name: Install, build, and upload your site
+        uses: withastro/action@v0
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./dist
+        uses: actions/deploy-pages@v1
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
