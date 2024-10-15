@@ -1,0 +1,45 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const allPosts = await getCollection('blog');
+const posts = allPosts.filter(post => [
+  'core-skills-for-traders',
+  'economic-knowledge-for-traders',
+  'emotional-management-for-traders',
+  'personal-behavior-improvement-for-traders',
+  'trading-skills-for-traders'
+].includes(post.slug));
+---
+
+<Layout title="交易者的成长路径">
+  <h1>交易者的成长路径</h1>
+  <p>本博客致力于帮助交易者全面提升自己，涵盖以下五个关键方面：</p>
+  
+  <ul>
+    {posts.map((post) => (
+      <li>
+        <a href={`/blog/${post.slug}/`}>{post.data.title}</a>
+        <p>{post.data.description}</p>
+      </li>
+    ))}
+  </ul>
+</Layout>
+
+<style>
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  li {
+    margin-bottom: 1.5rem;
+  }
+  li a {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  li p {
+    margin-top: 0.5rem;
+  }
+</style>
