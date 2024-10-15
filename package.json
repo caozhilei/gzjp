@@ -1,0 +1,16 @@
+{
+  "name": "astro-simple-blog",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@octokit/rest": "^21.0.2",
+    "astro": "^2.3.0"
+  }
+}
