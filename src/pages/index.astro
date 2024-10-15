@@ -2,31 +2,11 @@
 import Layout from '../layouts/Layout.astro';
 
 const topics = [
-  {
-    title: "交易者的核心能力培养",
-    slug: "core-skills",
-    description: "探讨交易者应该培养的关键能力，以及如何提升这些能力。"
-  },
-  {
-    title: "交易者的经济知识普及",
-    slug: "economic-knowledge",
-    description: "探讨交易者应该掌握的基本经济知识，以及如何提升这些知识。"
-  },
-  {
-    title: "交易者的情绪管理提升",
-    slug: "emotional-management",
-    description: "探讨交易者如何有效管理情绪，提高交易决策质量。"
-  },
-  {
-    title: "交易者的个人行为修炼",
-    slug: "personal-behavior",
-    description: "探讨交易者如何通过个人行为修炼来提高交易决策质量。"
-  },
-  {
-    title: "交易者的交易技巧训练",
-    slug: "trading-skills",
-    description: "探讨交易者应该掌握的关键交易技巧，以及如何有效训练这些技能。"
-  }
+  { title: "交易者的核心能力培养", slug: "core-skills" },
+  { title: "交易者的经济知识普及", slug: "economic-knowledge" },
+  { title: "交易者的情绪管理提升", slug: "emotional-management" },
+  { title: "交易者的个人行为修炼", slug: "personal-behavior" },
+  { title: "交易者的交易技巧训练", slug: "trading-skills" }
 ];
 ---
 
@@ -36,8 +16,7 @@ const topics = [
     <ul>
       {topics.map((topic) => (
         <li>
-          <h2><a href={`/blog/${topic.slug}`}>{topic.title}</a></h2>
-          <p>{topic.description}</p>
+          <a href={`/blog/${topic.slug}`}>{topic.title}</a>
         </li>
       ))}
     </ul>
@@ -47,15 +26,15 @@ const topics = [
 <style>
   main {
     margin: auto;
-    padding: 1.5rem;
+    padding: 1rem;
     max-width: 800px;
     font-family: Arial, sans-serif;
   }
   h1 {
-    font-size: 2.5rem;
+    font-size: 2rem;
     font-weight: 700;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     color: #333;
   }
   ul {
@@ -63,26 +42,14 @@ const topics = [
     padding: 0;
   }
   li {
-    margin-bottom: 2rem;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 1rem;
-  }
-  li:last-child {
-    border-bottom: none;
-  }
-  h2 {
-    margin-bottom: 0.5rem;
+    margin-bottom: 1rem;
   }
   a {
     color: #3273dc;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
   }
   a:hover {
     text-decoration: underline;
-  }
-  p {
-    color: #666;
-    line-height: 1.6;
   }
 </style>
